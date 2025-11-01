@@ -1,26 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --txt-color: #000000;
+
+  --dark-orange: #d87d4a;
+  --light-orange: #fbaf85;
+  --black: #000000;
+  --less-black: #101010;
+  --white: #ffffff;
+  --dark-grey: #f1f1f1;
+  --light-grey: #fafafa;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-dark-orange: var(--dark-orange);
+  --color-light-orange: var(--light-orange);
+  --color-black: var(--black);
+  --color-less-black: var(--less-black);
+  --color-white: var(--white);
+  --color-dark-grey: var(--dark-grey);
+  --color-light-grey: var(--light-grey);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--txt-color);
+  font-family: Manrope;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  letter-spacing: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+}
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.43px;
+}
+h3 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 100%;
+  letter-spacing: 2px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 1.71px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 1.29px;
+}
+
+p {
+  font-weight: 400;
+  /* font-size: 15px; */
+  line-height: 25px;
+  letter-spacing: 0px;
+  /* text-align: center; */
+}
+.overline-font {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 10px;
+}
+.subtitle {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 0.93px;
+}
+
+button {
+  width: 160;
+  height: 48;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 1px;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.btn-1 {
+  background-color: var(--dark-orange);
+  color: var(--white);
+}
+.btn-1:hover {
+  background-color: var(--light-orange);
+  color: var(--white);
+}
+
+.btn-2 {
+  background-color: transparent;
+  border: 1px solid var(--black);
+
+  color: var(--black);
+}
+.btn-2:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn-3 {
+  background-color: transparent;
+  color: var(--black);
+  width: 39;
+  height: 18;
+  opacity: 0.5;
+}
+.btn-3:hover,
+a:hover {
+  color: var(--dark-orange);
+  opacity: 1;
+}
+
+.custom-container{
+  @apply w-full px-6 md:px-10 lg:px-[165px]  flex items-center justify-center;
 }
