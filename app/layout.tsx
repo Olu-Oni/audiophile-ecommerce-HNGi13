@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` font-medium text-[15px]  antialiased`}>
+      <body className={` font-medium text-[15px]  antialiased flex flex-col items-center justify-center `}>
         {/* <div className="flex flex-col min-h-screen items-center justify-center "> */}
         <Header/>
         {children}

@@ -23,6 +23,26 @@
   --color-white: var(--white);
   --color-dark-grey: var(--dark-grey);
   --color-light-grey: var(--light-grey);
+  
+  --maxWidth-desktop:640px;
+  
+  /* breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1440px;
+
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 body {
@@ -33,7 +53,12 @@ body {
   font-size: 15px;
   line-height: 25px;
   letter-spacing: 0px;
+  min-width: 100dvw;
 }
+
+/* *{
+  display: block;
+} */
 
 h1,
 h2,
@@ -49,6 +74,8 @@ h1 {
   font-size: 56px;
   line-height: 58px;
   letter-spacing: 2px;
+  @apply max-md:text-4xl max-md:leading-10 max-md:tracking-[1.29px];
+  
 }
 h2 {
   font-size: 40px;
@@ -99,9 +126,9 @@ p {
   letter-spacing: 0.93px;
 }
 
-button {
-  width: 160;
-  height: 48;
+button, .button {
+  width: 160px;
+  height: 48px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 13px;
@@ -141,6 +168,15 @@ a {
   height: 18;
   opacity: 0.5;
 }
+.btn-4 {
+  background-color:var(--black);
+  color: var(--white);
+}
+.btn-4:hover {
+  background-color:#4C4C4C;
+  color: var(--white);
+}
+/* keep below cause a affects all, including links, cascading */
 .btn-3:hover,
 a:hover {
   color: var(--dark-orange);
@@ -148,5 +184,8 @@ a:hover {
 }
 
 .custom-container{
-  @apply w-full px-6 md:px-10 lg:px-[165px]  flex items-center justify-center;
+  @apply w-full px-6 md:px-10 lg:px-[165px] box-border ;
+}
+.custom-container:not(#hero-section) > *{
+  @apply max-w-[1440px] mx-auto;
 }
