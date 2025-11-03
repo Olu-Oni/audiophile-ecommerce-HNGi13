@@ -80,11 +80,11 @@ export function CardsCategoryGroup(
 ) {
   return (
     <section
-      className={`flex flex-col md:flex-row gap-6 w-full items-center justify-center ${className} gap-x-2.5 lg:gap-x-[30px] gap-y-[68px]`}
+      className={`flex mt-[51.5px] flex-col md:flex-row gap-6 w-full items-center justify-center ${className} gap-x-2.5 lg:gap-x-[30px] gap-y-[68px]`}
     >
       <CardsCategory
         title={"Headphones"}
-        href={"/#somm"}
+        href={"/headphones"}
         imageSrc={"/shared/desktop/image-category-thumbnail-headphones.png"}
         // imageWidth={imageWidth}
         // imageHeight={imageHeight}
@@ -93,7 +93,7 @@ export function CardsCategoryGroup(
       />
       <CardsCategory
         title={"Speakers"}
-        href={"/#somm"}
+        href={"/speakers"}
         imageSrc={"/shared/desktop/image-category-thumbnail-speakers.png"}
         // imageWidth={imageWidth}
         // imageHeight={imageHeight}
@@ -102,7 +102,7 @@ export function CardsCategoryGroup(
       />
       <CardsCategory
         title={"Earphones"}
-        href={"/#somm"}
+        href={"/earphones"}
         imageSrc={"/shared/desktop/image-category-thumbnail-earphones.png"}
         // imageWidth={imageWidth}
         // imageHeight={imageHeight}

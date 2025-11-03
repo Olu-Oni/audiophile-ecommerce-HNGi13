@@ -10,26 +10,28 @@ export default function Footer() {
 
         {/* Logo and Navigation Row */}
         <div className="flex flex-col md:flex-row items-center md:justify-between mt-12 md:mt-14 lg:mt-[71px] gap-8 md:gap-0">
-          <Image width={143} height={25} src="/logo.svg" alt="Audiophile" />
+          <Link href="/">
+            <Image width={143} height={25} src="/logo.svg" alt="Audiophile" />
+          </Link>
 
           <nav className="flex flex-col md:flex-row items-center gap-4 md:gap-[34px] font-bold text-[13px] leading-[25px] tracking-[2px] uppercase">
             <Link href="/" className="hover:text-dark-orange transition-colors">
               Home
             </Link>
             <Link
-              href="/category/headphones"
+              href="/headphones"
               className="hover:text-dark-orange transition-colors"
             >
               Headphones
             </Link>
             <Link
-              href="/category/speakers"
+              href="/speakers"
               className="hover:text-dark-orange transition-colors"
             >
               Speakers
             </Link>
             <Link
-              href="/category/earphones"
+              href="/earphones"
               className="hover:text-dark-orange transition-colors"
             >
               Earphones
@@ -49,7 +51,7 @@ export default function Footer() {
           <div className="flex gap-4 max-md:justify-center lg:mb-2 max-lg:hidden">
             <Link
               href="#"
-              className="hover:opacity-100 transition-opacity"
+              className="hover:text-dark-orange"
               aria-label="Facebook"
             >
               <Image
@@ -61,7 +63,7 @@ export default function Footer() {
             </Link>
             <Link
               href="#"
-              className="hover:opacity-100 transition-opacity"
+              className="hover:text-dark-orange"
               aria-label="Twitter"
             >
               <Image
@@ -73,7 +75,7 @@ export default function Footer() {
             </Link>
             <Link
               href="#"
-              className="hover:opacity-100 transition-opacity"
+              className="hover:text-dark-orange"
               aria-label="Instagram"
             >
               <Image
@@ -93,40 +95,33 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 max-md:justify-center lg:mb-2 lg:hidden">
-            <Link
-              href="#"
-              className="hover:opacity-100 transition-opacity"
-              aria-label="Facebook"
-            >
+            <Link href="#" aria-label="Facebook" className="group">
               <Image
                 src="/shared/desktop/icon-facebook.svg"
                 width={24}
                 height={24}
                 alt=""
+                className="fill-white group-hover:fill-dark-orange transition-colors"
               />
             </Link>
-            <Link
-              href="#"
-              className="hover:opacity-100 transition-opacity"
-              aria-label="Twitter"
-            >
+
+            <Link href="#" aria-label="Twitter" className="group">
               <Image
                 src="/shared/desktop/icon-twitter.svg"
                 width={24}
                 height={24}
                 alt=""
+                className="fill-white group-hover:fill-dark-orange transition-colors"
               />
             </Link>
-            <Link
-              href="#"
-              className="hover:opacity-100 transition-opacity"
-              aria-label="Instagram"
-            >
+
+            <Link href="#" aria-label="Instagram" className="group">
               <Image
                 src="/shared/desktop/icon-instagram.svg"
                 width={24}
                 height={24}
                 alt=""
+                className="fill-white group-hover:fill-dark-orange transition-colors"
               />
             </Link>
           </div>

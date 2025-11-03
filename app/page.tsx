@@ -1,3 +1,4 @@
+import { BestGear } from "@/components/layouts/content";
 import { NavBtn } from "@/components/ui/buttons";
 import { CardsCategoryGroup } from "@/components/ui/cards";
 import Image from "next/image";
@@ -70,7 +71,10 @@ function Hero() {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <NavBtn text="see product" href="#get-started" />
+          <NavBtn
+            text="see product"
+            href="/headphones/xx99-mark-two-headphones"
+          />
         </div>
       </div>
     </section>
@@ -82,7 +86,7 @@ export default function Home() {
     // <div className="flex flex-col items-center justify-center">
     <>
       <Hero />
-      <main className=" custom-container pt-[92px] md:pt-[200px] pb-[120px] md:pb-[133px]">
+      <main className=" custom-container pt-[40.5px] md:pt-[148.5px] ">
         <CardsCategoryGroup />
 
         <section className=" mt-30 flex flex-wrap gap-y-6">
@@ -120,7 +124,11 @@ export default function Home() {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </p>
-              <NavBtn text="see product" href="#get-started" variant="btn-4" />
+              <NavBtn
+                text="see product"
+                href="/speakers/zx9-speaker"
+                variant="btn-4"
+              />
             </div>
           </div>
 
@@ -143,7 +151,11 @@ export default function Home() {
             </picture>
             <h4 className="mt-8 mb-6">ZX7 SPEAKER</h4>
 
-            <NavBtn text="see product" href="#get-started" variant="btn-2" />
+            <NavBtn
+              text="see product"
+              href="/speakers/zx7-speaker"
+              variant="btn-2"
+            />
           </div>
 
           <div id="earphones-grp" className="flex max-md:flex-col gap-6 flex-1">
@@ -162,53 +174,14 @@ export default function Home() {
               </picture>
             </div>
             <div className="w-full md:basis-1/2 h-50  md:h-80 rounded-lg relative overflow-hidden flex flex-col p-6 md:p-[41px] lg:p-[95px] justify-center  bg-dark-grey text-black">
-              {/* <div className="bg-[url('/home/mobile/image-speaker-zx7.jpg')] md:bg-[url('/home/tablet/image-speaker-zx7.jpg')] absolute -z-20 inset-0  bg-cover bg-center  bg-no-repeat"></div> */}
+              <h4 className="mb-8">YX1 EARPHONES</h4>
 
-              <h4 className="mb-8">ZX7 SPEAKER</h4>
-
-              <NavBtn text="see product" href="#get-started" variant="btn-2" />
+              <NavBtn text="see product" href="/earphones/yx1-earphones"
+               variant="btn-2" />
             </div>
           </div>
         </section>
-        <section className="flex max-lg:flex-col gap-y-10 gap-x-[125px] md:gap-y-[63px] place-items-center max-lg:text-center mt-30 ">
-          <div className="w-full  lg:min-w-[540px]    rounded-lg relative overflow-hidden flex flex-col justify-center  text-black">
-            {/* <div className="bg-[url('/home/mobile/image-speaker-zx7.jpg')] md:bg-[url('/home/tablet/image-speaker-zx7.jpg')] absolute -z-20 inset-0  bg-cover bg-center  bg-no-repeat"></div> */}
-            <picture className="w-full h-[300px] lg:min-h-[588px] lg:min-w-[540px] ">
-              <source
-                media="(min-width: 1440px)"
-                srcSet="/shared/desktop/image-best-gear.jpg"
-              />
-              <source
-                media="(min-width: 768px)"
-                srcSet="/shared/tablet/image-best-gear.jpg"
-              />
-              <img
-                src="/shared/mobile/image-best-gear.jpg"
-                alt="best gear"
-                className="w-full h-full object-cover"
-              />
-            </picture>
-          </div>
-          <div className="md:px-[58px] lg:p-0 lg:-order-1">
-            <h4 className="tracking-[1px] mb-8 lg:hidden">
-              Bringing you the <span className="text-dark-orange">best</span>{" "}
-              audio gear
-            </h4>
-            <h2 className="mb-8 max-lg:hidden">
-              Bringing you the <span className="text-dark-orange">best</span>{" "}
-              audio gear
-            </h2>
-            <p className="opacity-50 text-black">
-              Located at the heart of New York City, Audiophile is the premier
-              store for high end headphones, earphones, speakers, and audio
-              accessories. We have a large showroom and luxury demonstration
-              rooms available for you to browse and experience a wide range of
-              our products. Stop by our store to meet some of the fantastic
-              people who make Audiophile the best place to buy your portable
-              audio equipment.
-            </p>
-          </div>
-        </section>
+        <BestGear />
       </main>
     </>
     // </div>

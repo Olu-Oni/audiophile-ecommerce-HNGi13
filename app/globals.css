@@ -30,6 +30,7 @@
   --breakpoint-*: initial;
   --breakpoint-sm: 375px;
   --breakpoint-md: 768px;
+  --breakpoint-laptop: 1024px;
   --breakpoint-lg: 1440px;
 
 }
@@ -77,15 +78,22 @@ h1 {
   @apply max-md:text-4xl max-md:leading-10 max-md:tracking-[1.29px];
   
 }
+
 h2 {
   font-size: 40px;
   line-height: 44px;
   letter-spacing: 1.43px;
 }
+h2.main-heading{
+  @apply  w-full  max-md:text-[28px] max-md:leading-[100%] max-md:tracking-[2px] mb-16 mt-[90px] lg:mt-24 bg-black text-center text-white py-8;
+}
+
+
 h3 {
   font-size: 32px;
   line-height: 36px;
   letter-spacing: 1.14px;
+  @apply max-md:tracking-[0.86px] max-md:text-[24px];
 }
 
 h4 {

@@ -3,8 +3,9 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "./footer";
-import Header from "./header";
+import Footer from "../components/layouts/footer";
+import Header from "../components/layouts/header";
+import { CartProvider } from "@/lib/cart-content";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,12 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` font-medium text-[15px]  antialiased flex flex-col items-center justify-center `}>
-        {/* <div className="flex flex-col min-h-screen items-center justify-center "> */}
-        <Header/>
-        {children}
-        <Footer/>
-        {/* </div> */}
+      <body
+        className={` font-medium text-[15px]  antialiased flex flex-col items-center justify-center `}
+      >
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
