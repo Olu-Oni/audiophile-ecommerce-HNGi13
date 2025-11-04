@@ -14,7 +14,7 @@ interface PageProps {
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
-  const products = getProductsByCategory(category);
+  const products = await getProductsByCategory(category);
 
   if (products.length === 0) {
     notFound();

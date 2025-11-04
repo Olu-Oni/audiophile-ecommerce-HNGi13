@@ -1,3 +1,4 @@
+
 import { getProductBySlug, getAllProducts } from "@/lib/data";
 import { notFound } from "next/navigation";
 // import Image from "next/image";
@@ -14,7 +15,7 @@ interface PageProps {
 
 export default async function ProductPage({ params }: PageProps) {
   const { category, slug } = await params; 
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
   console.log(product);
 
   if (!product || product.category !== category) {
@@ -23,7 +24,7 @@ export default async function ProductPage({ params }: PageProps) {
 
   const othersWithData = await Promise.all(
     product.others.map(async (other) => {
-      const fullProduct = getProductBySlug(other.slug);
+      const fullProduct = await getProductBySlug(other.slug);
       return fullProduct ? { ...other, category: fullProduct.category } : null;
     })
   );
@@ -183,7 +184,7 @@ export default async function ProductPage({ params }: PageProps) {
 
 // Generate static paths for all products
 export async function generateStaticParams() {
-  const products = getAllProducts();
+  const products = await getAllProducts();
 
   return products.map((product) => ({
     category: product.category,
