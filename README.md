@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Audiophile E-commerce
 
-## Getting Started
+A modern e-commerce platform for premium audio equipment built with Next.js, TypeScript, and Convex.
 
-First, run the development server:
+## Live Demo
+
+🔗 **[View Live Site](https://audiophile-ecommerce-olu.vercel.app/)**
+
+## Features
+
+- 🛒 Full-featured shopping cart
+- 📧 Email notifications with Nodemailer
+- 🎨 Responsive design with Tailwind CSS
+- ✅ Form validation with React Hook Form & Zod
+- 🔄 Real-time data with Convex
+- ⚡ Fast and optimized with Next.js 16
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone and install**
+   ```bash
+   git clone <repo-url>
+   cd audiophile-ecommerce
+   npm install
+   ```
+
+2. **Set up environment variables**
+   
+   Create `.env.local` in the root directory:
+   ```env
+   CONVEX_DEPLOYMENT=your_convex_deployment_url
+   NEXT_PUBLIC_CONVEX_URL=your_convex_public_url
+   
+   # Email configuration (Nodemailer)
+   EMAIL_USER=your_email@gmail.com
+   EMAIL_PASSWORD=your_app_password
+   ```
+
+3. **Set up Convex**
+   ```bash
+   npx convex dev
+   ```
+
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy to Hosting Service
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Or manually:
+```bash
+vercel --prod
+```
 
-## Learn More
+Remember to add environment variables in Vercel dashboard.
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling
+- **Convex** - Backend & database
+- **React Hook Form** - Form handling
+- **Zod** - Schema validation
+- **Nodemailer** - Email service
+- **Notyf** - Toast notifications
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+audiophile-ecommerce/
+├── app/              # Next.js app directory
+├── components/       # React components
+├── convex/          # Convex backend functions
+├── public/          # Static assets
+└── .env.local       # Environment variables
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
+
+---
+
+Built with Next.js and deployed on Vercel
