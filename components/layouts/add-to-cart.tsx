@@ -3,12 +3,15 @@
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 import { useCart } from "@/lib/cart-content";
+import { Notyf } from "notyf";
 
 interface AddToCartProps {
-  product: Product;
+    product: Product;
 }
 
 export function AddToCart({ product }: AddToCartProps) {
+  const notyf = new Notyf();
+
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
 
@@ -25,13 +28,16 @@ export function AddToCart({ product }: AddToCartProps) {
       quantity
     );
 
-    // Optional: Show success message
-    alert("Added to cart!");
+    notyf.success("Added to cart!");
+    setQuantity(1)
+    // Optional: remove when done
+    console.log(JSON.parse(localStorage.getItem('cart')||''))
+  
   };
 
   return (
     <div className="flex gap-4 ">
-      <div className="flex items-center gap-4 bg-dark-grey px-4 w-30">
+      <div className="flex items-center gap-4 bg-dark-grey px-2 w-30">
         <button
           onClick={() => setQuantity(Math.max(1, quantity - 1))}
           className="opacity-25 hover:text-dark-orange w-full!"

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white mt-auto custom-container">
+    <footer className="bg-black text-white custom-container">
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-0">
         {/* Orange accent bar */}
         <span className="h-1 w-[101px] bg-dark-orange block max-md:mx-auto"></span>
