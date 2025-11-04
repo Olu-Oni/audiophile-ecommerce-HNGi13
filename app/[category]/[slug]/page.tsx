@@ -1,6 +1,6 @@
 import { getProductBySlug, getAllProducts } from "@/lib/data";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { EndContent } from "@/components/layouts/content";
 import { AddToCart } from "@/components/layouts/add-to-cart";
@@ -13,7 +13,7 @@ interface PageProps {
 }
 
 export default async function ProductPage({ params }: PageProps) {
-  const { category, slug } = await params; // Add await here
+  const { category, slug } = await params; 
   const product = getProductBySlug(slug);
   console.log(product);
 

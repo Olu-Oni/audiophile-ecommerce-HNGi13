@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Shadows from "@/components/ui/shadows";
+// import Shadows from "@/components/ui/shadows";
 
 interface CardsCategoryProps {
   title: string;

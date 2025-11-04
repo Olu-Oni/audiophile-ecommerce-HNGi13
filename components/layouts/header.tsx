@@ -4,15 +4,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardsCategoryGroup } from "../ui/cards";
-import { useCart } from "@/lib/cart-content";
+// import { useCart } from "@/lib/cart-content";
 import { CartModal } from "./cartModal";
 
 export function CartIcon() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   
-  const { totalItems } = useCart();
+  // const { totalItems } = useCart();
 
   return (
     <>
@@ -45,6 +45,13 @@ export default function Header() {
   const pathname = usePathname();
   const categorySlug = useCategorySlug();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  
+  useEffect(() => {
+    console.log('Navigated to:', pathname);
+    setMobileOpen(false);
+  }, [pathname]);
+
 
   // background colour – home page is a little darker
   const bg = pathname === "/" ? "bg-[#121212]" : "bg-black";
@@ -97,19 +104,9 @@ export default function Header() {
       {/*  Divider */}
       <hr className="border-white/[0.104] border-t w-full max-w-[1440px] mx-auto" />
 
-      {/*  Breadcrumb – only on product pages */}
-      {categorySlug && (
-        <div className="max-w-[1440px] mx-auto px-6 py-2 text-sm opacity-50">
-          <Link href={`/${categorySlug.category}`} className="capitalize">
-            {categorySlug.category}
-          </Link>{" "}
-          • {categorySlug.slug.replace(/-/g, " ")}
-        </div>
-      )}
-
       {/*  MOBILE MENU – slides in from the left */}
       <div
-        className={`fixed inset-x-0 max-md:h-[500px] overflow-hidden z-40 bg-white backdrop-blur-md transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed inset-x-0 max-md:h-[620px] overflow-hidden z-40 bg-white backdrop-blur-md transform transition-transform duration-300 ease-in-out lg:hidden ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

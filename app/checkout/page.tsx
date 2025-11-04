@@ -78,6 +78,7 @@ export default function CheckoutPage() {
   const createOrder = useMutation(api.orders.create);
 
   const [submittedOrder, setSubittedOrder] = useState<{
+    data: FormData;
     items: CartItem[];
     grandTotal: number;
   } | null>(null);
@@ -105,7 +106,7 @@ export default function CheckoutPage() {
     console.log("submitting");
     setIsSubmitting(true);
     try {
-      const newOrderId = await createOrder({
+      const newOrder = {
         ...data,
         items: cart.map((i: any) => ({
           id: i.id,
@@ -119,7 +120,8 @@ export default function CheckoutPage() {
         shipping,
         vat,
         grandTotal,
-      });
+      };
+      const newOrderId = await createOrder(newOrder);
 
       await fetch("/api/send-order-to-email", {
         method: "POST",
@@ -130,18 +132,19 @@ export default function CheckoutPage() {
           orderId: newOrderId,
           items: cart,
           grandTotal,
+          shippingAddress: {
+            address: data.address,
+            zipCode: data.zipCode,
+            country: data.country,
+            city: data.city,
+          },
         }),
       });
 
-      // ← CAPTURE CART STATE *BEFORE* CLEARING
-      const orderSnapshot = {
-        items: [...cart],
-        grandTotal,
-      };
-
       setOrderId(newOrderId);
       setShowSuccessModal(true);
-      setSubittedOrder(orderSnapshot);
+      setSubittedOrder({ data: data, items: cart, grandTotal });
+      console.log(newOrder);
       clearCart();
     } catch (error) {
       console.error("Order failed:", error);
@@ -460,7 +463,10 @@ export default function CheckoutPage() {
           grandTotal={submittedOrder.grandTotal}
           firstItem={submittedOrder.items[0]}
           itemCount={submittedOrder.items.length}
-          onClose={() => {setSubittedOrder(null);router.push("/")}}
+          onClose={() => {
+            setSubittedOrder(null);
+            router.push("/");
+          }}
         />
       )}
     </>
@@ -525,7 +531,7 @@ function SuccessModal({
           </div>
           <div className="bg-black text-white p-6 w-full md:max-w-[198px]">
             <p className="opacity-50 uppercase mb-2">Grand Total</p>
-            <h6 >${grandTotal.toLocaleString()}</h6>
+            <h6>${grandTotal.toLocaleString()}</h6>
           </div>
         </div>
 
