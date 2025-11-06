@@ -6,24 +6,24 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CardsCategoryGroup } from "../ui/cards";
-// import { useCart } from "@/lib/cart-content";
+import { useCart } from "@/lib/cart-content";
 import { CartModal } from "./cartModal";
 
 export function CartIcon() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   
-  // const { totalItems } = useCart();
+  const { totalItems } = useCart();
 
   return (
     <>
     <button onClick={() => setIsCartOpen(true)} className="ml-auto lg:ml-0 relative w-fit! h-fit!">
       <Image src="/carts.svg" width={23} height={20} alt="Cart" />
 
-      {/* {totalItems > 0 && (
+      {totalItems > 0 && (
         <span className="absolute -top-3 -right-3 bg-dark-orange text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
           {totalItems}
         </span>
-      )} */}
+      )}
     </button>
     <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </>
