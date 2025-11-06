@@ -30,7 +30,7 @@ export default async function CategoryPage({ params }: PageProps) {
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`flex flex-col laptop:flex-row gap-8 items-center ${
+              className={`flex flex-col laptop:flex-row gap-8 md:gap-x-[69px] lg:gap-x-[125px] items-center ${
                 index % 2 === 1 ? "laptop:flex-row-reverse" : ""
               }`}
             >

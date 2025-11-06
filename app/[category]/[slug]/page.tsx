@@ -45,7 +45,7 @@ export default async function ProductPage({ params }: PageProps) {
       </Link>
 
       {/* Product detail */}
-      <section className="flex flex-col md:flex-row gap-y-12 gap-x-[69px] items-center mb-22">
+      <section className="flex flex-col md:flex-row gap-y-12 gap-x-[69px] lg:gap-x-[125px] items-center mb-22">
         <div className="flex-1">
           <picture>
             <source
