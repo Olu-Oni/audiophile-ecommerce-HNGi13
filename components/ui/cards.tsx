@@ -80,7 +80,7 @@ export function CardsCategoryGroup(
 ) {
   return (
     <section
-      className={`flex mt-[51.5px] flex-col md:flex-row gap-6 w-full items-center justify-center ${className} gap-x-2.5 lg:gap-x-[30px] gap-y-[68px]`}
+      className={`flex mt-[51.5px] lg:mt-[75px]  flex-col md:flex-row gap-6 w-full items-center justify-center ${className} gap-x-2.5 lg:gap-x-[30px] gap-y-[68px]`}
     >
       <CardsCategory
         title={"Headphones"}
