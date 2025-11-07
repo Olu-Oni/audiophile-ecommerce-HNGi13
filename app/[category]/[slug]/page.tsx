@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: PageProps) {
   return (
     <main className="custom-container mt-[90px] lg:mt-24">
       {/* Back button */}
-      <Link href={`/${category}`} className="opacity-50 mt-4 mb-6 inline-block">
+      <Link href={`/${category}`} className="opacity-50 mt-4 mb-6 block ">
         Go Back
       </Link>
 

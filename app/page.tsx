@@ -9,7 +9,7 @@ function Hero() {
   return (
     <section
       id="hero-section"
-      className=" min-h-screen rounded-md max-md:px-0! custom-container flex flex-col items-center justify-center lg:items-start max-lg:text-center pt-[90px] pb-10 text-white overflow-hidden relative"
+      className=" min-h-screen   max-w-[1440px] rounded-md max-md:px-0! custom-container flex flex-col items-center justify-center lg:items-start max-lg:text-center pt-[90px] pb-10 text-white overflow-hidden relative"
       aria-labelledby="hero-heading"
     >
       {/* Base layer - darker background */}
@@ -90,7 +90,7 @@ export default function Home() {
         <CardsCategoryGroup />
 
         <section className=" mt-30 flex flex-wrap gap-y-6">
-          <div className="w-full px-6 lg:pr-[95px] lg:pl-[118px] max-lg:py-14 h-[600px] md:h-[720px] lg:h-[560px] bg-dark-orange rounded-lg relative overflow-hidden place-items-center max-lg:text-center text-white flex flex-col lg:flex-row justify-between">
+          <div className="w-full  px-6 lg:pr-[95px] lg:pl-[118px] max-lg:py-14 h-[600px] md:h-[720px] lg:h-[560px] bg-dark-orange rounded-lg relative overflow-hidden place-items-center max-lg:text-center text-white flex flex-col lg:flex-row justify-between">
             <Image
               src={"/home/desktop/pattern-circles.svg"}
               alt=""
